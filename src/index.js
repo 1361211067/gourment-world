@@ -1,19 +1,25 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-
+import { Provider } from 'react-redux';
 import reportWebVitals from './reportWebVitals';
 
 // 引入路由
 import { RouterProvider } from "react-router-dom";
 import router from './router'
+import store from './store';
+import { post, get } from "./api/axios";
+
+Component.prototype.get = get;
+Component.prototype.post = post;
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    {/* <App /> */}
+  // <React.StrictMode>
+  <Provider store={store}>
     <RouterProvider router={router} />
-  </React.StrictMode>
+  </Provider>
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

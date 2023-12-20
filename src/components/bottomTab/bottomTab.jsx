@@ -13,11 +13,11 @@ import {
 } from 'react-router-dom'
 
 import './bottomTab.css'
-
+// 底部标签栏
 export default function BottomTab() {
     const tabs = [
         {
-            key: 'home/recommend',
+            key: '',
             title: '菜谱',
             icon: <TextOutline />,
             badge: Badge.dot,
@@ -30,7 +30,7 @@ export default function BottomTab() {
         },
         {
             key: 'message',
-            title: '消息',
+            title: '收藏夹',
             icon: <BellOutline />,
             badge: '99+',
         },
@@ -41,7 +41,7 @@ export default function BottomTab() {
         },
     ]
 
-    const [activeKey, setActiveKey] = useState('home/recommend');
+    const [activeKey, setActiveKey] = useState('');
     const navigte = useNavigate();
 
     const setRouteActive = (value) => {

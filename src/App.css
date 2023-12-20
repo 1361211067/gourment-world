@@ -3,3 +3,6 @@
 :root:root {
     --adm-color-primary: #ff5662;
   }
+  .box{
+    margin-bottom: 50rem;
+  }

@@ -1,7 +1,11 @@
-export default function Video(){
+
+
+export default function Video() {
     return (
         <div>
-            视频
+            <p>
+                视频
+            </p>
         </div>
     )
 }

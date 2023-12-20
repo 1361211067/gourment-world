@@ -1,0 +1,74 @@
+.card {
+    padding: 10rem;
+
+    .authorBox {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 10rem 0;
+
+        .author {
+            display: flex;
+            align-items: center;
+
+            img {
+                border-radius: 50%;
+                width: 35rem;
+            }
+
+            // 姓名
+            span {
+                margin: 0 10rem;
+                font-size: 14rem;
+            }
+        }
+
+        .more {
+            font-size: 20rem;
+
+        }
+    }
+
+    .content {
+        .imgContent {
+            .img {
+                img {
+                    width: 355rem;
+                    border-radius: 15rem;
+                }
+            }
+        }
+
+        .textContent {
+            margin: 10rem 0;
+
+            .collectionBox {
+                display: flex;
+                justify-content: space-between;
+                align-content: center;
+
+                .left {
+                    display: flex;
+                    align-items: center;
+                }
+
+                .right {
+                    font-size: 20rem;
+                }
+            }
+
+            .desc {
+                margin-top: 10rem;
+                font-size: 16rem;
+                line-height: 25rem;
+                overflow: hidden;
+                /* 纯英文换行 */
+                word-break: break-all;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                /* 这里是超出几行省略 */
+                -webkit-line-clamp: 2;
+            }
+        }
+    }
+}

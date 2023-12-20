@@ -1,0 +1,61 @@
+.detailPage {
+    position: relative;
+    width: 100%;
+}
+
+.detailHeader {
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(35, 35, 35, 0.5), rgba(0, 0, 0, 0));
+    color: #fff;
+}
+
+.detailContentBox {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    width: 100%;
+
+
+}
+
+.ContentBox {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+
+    .detailContent {
+
+        padding: 0 10rem;
+        .detailTitle{
+            margin: 10rem 0;
+            font-weight: bolder;
+            font-size: 20rem;
+        }
+        .authorInfo{
+            margin: 10rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .left{
+                display: flex;
+                align-items: center;
+                .authorName{
+                    margin: 0 10rem;
+                }
+            }
+        }
+        .desc{
+            margin: 10rem 0;
+            font-size: 14rem;
+        }
+        .foodsList{
+            margin: 10rem 0;
+            .foodTitle{
+                font-size: 16rem;
+                font-weight: bold;
+            }
+        }
+    }
+}

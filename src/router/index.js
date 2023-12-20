@@ -6,8 +6,13 @@ import Home from "../view/Home/home";
 import Mine from "../view/Mine/mine";
 import Message from "../view/Message/message";
 import Note from "../view/Note/note";
+import Search from "../view/Search/search";
 import Video from "../view/Home/video";
-import Recommend from "../view/Home/recommend";
+import Recommend from "../view/Home/recommended";
+import Detail from "../view/Detail/detail";
+import NoFundPage from "../view/noFundPage";
+
+import { getDetail } from "../api/index";
 
 import {
     createBrowserRouter,
@@ -26,6 +31,9 @@ export const tabs = [
     }
 ]
 
+function getDetailData(id) {
+    return getDetail(id);
+}
 
 export default createBrowserRouter([
     {
@@ -33,18 +41,22 @@ export default createBrowserRouter([
         element: <App />,
         children: [
             {
-                path: "home",
+                path: "",
                 element: <Home />,
                 children: [
                     {
-                        path: "/home/recommend",
+                        path: "",
                         element: <Recommend />,
                     },
                     {
-                        path: "/home/video",
+                        path: "/videos",
                         element: <Video />,
                     }
                 ]
+            },
+            {
+                path: "search",
+                element: <Search />,
             },
             {
                 path: "message",
@@ -57,9 +69,23 @@ export default createBrowserRouter([
             {
                 path: "mine",
                 element: <Mine />,
-            }
+            },
+
         ]
+    },
+    {
+        path: 'detail/:id',
+        element: <Detail />,
+        loader: async (obj) => {
+            console.log('先执行loader函数', obj.params.id);
+            const data = await getDetailData(obj.params.id);
+            return data;
+        }
+    },
+    {
+        path: "*",
+        element: <NoFundPage />
     }
 ], {
-    initialPath: "home/recommend",
+    initialPath: "home/recommended",
 })
